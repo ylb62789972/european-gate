@@ -1,356 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EUROPEAN GATE PC – Premium Real Estate Management</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet"/>
-  <style>
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
-      color: #1c2b4a;
-      background: #fff;
-      line-height: 1.6;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { display: block; width: 100%; object-fit: cover; }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EUROPEAN GATE PC – Premium Real Estate Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: #273656;
+            background: #fff;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { display: block; width: 100%; height: auto; object-fit: cover; }
 
-    /* ===== NAV ===== */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 48px;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #f0f0f0;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #1c2b4a;
-    }
-    .nav-logo svg {
-      width: 36px; height: 36px;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links li a {
-      font-size: 14px;
-      font-weight: 500;
-      color: #1c2b4a;
-      transition: color 0.2s;
-    }
-    .nav-links li a:hover { color: #4a6fa5; }
-    .lang-switcher {
-      display: flex;
-      gap: 8px;
-      background: #eef2f8;
-      padding: 4px;
-      border-radius: 50px;
-    }
-    .lang-btn {
-      padding: 4px 12px;
-      border-radius: 50px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      transition: all 0.2s;
-    }
-    .lang-btn.active {
-      background: #1c2b4a;
-      color: #fff;
-    }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding-top: 80px;
-      overflow: hidden;
-      position: relative;
-    }
-    .hero-left {
-      padding: 80px 64px 80px 80px;
-      z-index: 2;
-    }
-    .hero-tag {
-      display: inline-block;
-      background: #eef2f8;
-      color: #4a6fa5;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      padding: 6px 14px;
-      border-radius: 50px;
-      margin-bottom: 24px;
-    }
-    .hero h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(42px, 5vw, 68px);
-      line-height: 1.1;
-      color: #1c2b4a;
-      margin-bottom: 24px;
-    }
-    .hero p {
-      font-size: 17px;
-      color: #4a5568;
-      max-width: 420px;
-      margin-bottom: 40px;
-      line-height: 1.7;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #1c2b4a;
-      color: #fff;
-      padding: 16px 36px;
-      border-radius: 50px;
-      font-size: 15px;
-      font-weight: 600;
-      transition: background 0.2s, transform 0.15s;
-      border: none;
-      cursor: pointer;
-    }
-    .btn-primary:hover { background: #4a6fa5; transform: translateY(-1px); }
-    .hero-right {
-      position: relative;
-      height: 100vh;
-    }
-    .hero-right img {
-      height: 100%;
-      object-fit: cover;
-      border-radius: 0 0 0 80px;
-    }
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 48px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .nav-logo { font-size: 24px; font-weight: 700; color: #273656; display: flex; align-items: center; gap: 8px; }
+        .nav-logo span { color: #4a90e2; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { font-weight: 500; font-size: 15px; }
+        .nav-links a:hover { color: #4a90e2; }
+        .btn-login { padding: 10px 24px; border: 1px solid #273656; border-radius: 50px; font-weight: 600; }
+        .btn-login:hover { background: #273656; color: #fff; }
 
-    /* ===== FEATURES ===== */
-    .features-section {
-      padding: 100px 80px;
-      text-align: center;
-    }
-    .features-section h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(32px, 4vw, 52px);
-      color: #1c2b4a;
-      margin-bottom: 60px;
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .feature-card {
-      background: #fff;
-      border-radius: 24px;
-      padding: 48px 32px;
-      border: 1px solid #f0f0f0;
-      transition: all 0.3s ease;
-    }
-    .feature-card:hover {
-      box-shadow: 0 20px 60px rgba(28,43,74,0.1);
-      transform: translateY(-8px);
-    }
-    .feature-icon {
-      font-size: 32px;
-      margin-bottom: 24px;
-      display: block;
-    }
+        /* ===== HERO ===== */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 { font-size: 56px; margin-bottom: 20px; font-weight: 700; max-width: 800px; }
+        .hero p { font-size: 20px; margin-bottom: 40px; opacity: 0.9; }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: #1c2b4a;
-      color: #fff;
-      padding: 80px 80px 40px;
-    }
-    .footer-content {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 60px;
-      margin-bottom: 60px;
-    }
-    .footer-logo {
-      font-weight: 700;
-      font-size: 20px;
-      margin-bottom: 24px;
-      display: block;
-    }
-    .footer-col h4 {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 24px;
-      color: #a8c4e8;
-    }
-    .footer-col ul {
-      list-style: none;
-    }
-    .footer-col ul li {
-      margin-bottom: 12px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-    .footer-col ul li a:hover { opacity: 1; text-decoration: underline; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 40px;
-      text-align: center;
-      font-size: 12px;
-      opacity: 0.5;
-    }
+        .search-container {
+            background: #fff;
+            padding: 10px;
+            border-radius: 100px;
+            display: flex;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .search-box { flex: 1; padding: 15px 25px; border: none; outline: none; font-size: 16px; border-radius: 50px; }
+        .btn-search { background: #273656; color: #fff; border: none; padding: 15px 35px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        .btn-search:hover { background: #1a253d; }
 
-    /* Translation Classes */
-    [lang="zh"] { display: none; }
-    body.lang-zh [lang="en"] { display: none; }
-    body.lang-zh [lang="zh"] { display: inline; }
-    body.lang-zh .feature-card [lang="zh"], 
-    body.lang-zh h1 [lang="zh"], 
-    body.lang-zh p [lang="zh"],
-    body.lang-zh h2 [lang="zh"],
-    body.lang-zh h3 [lang="zh"],
-    body.lang-zh li [lang="zh"] { display: block; }
-  </style>
+        /* ===== SECTIONS ===== */
+        section { padding: 100px 0; }
+        .section-title { font-size: 32px; margin-bottom: 40px; font-weight: 700; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        .card { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: 0.3s; cursor: pointer; }
+        .card:hover { transform: translateY(-5px); }
+        .card-img { height: 200px; }
+        .card-content { padding: 20px; }
+        .card-title { font-weight: 700; font-size: 18px; margin-bottom: 5px; }
+        .card-desc { font-size: 14px; color: #666; }
+
+        /* ===== FOOTER ===== */
+        footer { background: #f9f9f9; padding: 80px 0 40px; border-top: 1px solid #eee; }
+        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 60px; }
+        .footer-logo { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
+        .footer-col h4 { margin-bottom: 20px; font-size: 16px; }
+        .footer-col ul li { margin-bottom: 10px; font-size: 14px; color: #666; }
+        .footer-bottom { border-top: 1px solid #eee; padding-top: 40px; text-align: center; font-size: 14px; color: #999; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .nav-links { display: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-logo">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="40" height="40" rx="8" fill="#1C2B4A"/>
-        <path d="M12 28V12H28V28H12ZM14 26H26V14H14V26Z" fill="white"/>
-        <path d="M18 18H22V22H18V18Z" fill="white"/>
-      </svg>
-      <span lang="en">EUROPEAN GATE</span>
-      <span lang="zh">欧洲之门公司</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#"><span lang="en">Home</span><span lang="zh">首页</span></a></li>
-      <li><a href="#"><span lang="en">Management</span><span lang="zh">资产管理</span></a></li>
-      <li><a href="#"><span lang="en">About</span><span lang="zh">关于我们</span></a></li>
-      <li>
-        <div class="lang-switcher">
-          <button class="lang-btn active" onclick="setLang('en')">EN</button>
-          <button class="lang-btn" onclick="setLang('zh')">中文</button>
+    <nav>
+        <div class="nav-logo">EUROPEAN<span>GATE</span></div>
+        <div class="nav-links">
+            <a href="#">Explore</a>
+            <a href="#">For Owners</a>
+            <a href="#">Help</a>
+            <a href="#" class="btn-login">Login / Sign up</a>
         </div>
-      </li>
-    </ul>
-  </nav>
+    </nav>
 
-  <section class="hero">
-    <div class="hero-left">
-      <span class="hero-tag">
-        <span lang="en">Real Estate Excellence</span>
-        <span lang="zh">卓越房地产服务</span>
-      </span>
-      <h1>
-        <span lang="en">EUROPEAN GATE PC</span>
-        <span lang="zh">欧洲之门公司</span>
-      </h1>
-      <p>
-        <span lang="en">As the most professional real estate management company in Greece, we offer bespoke solutions for owners and investors.</span>
-        <span lang="zh">作为希腊最专业的房地产管理公司，我们为业主和投资者提供定制化解决方案。</span>
-      </p>
-      <div class="hero-actions">
-        <button class="btn-primary">
-          <span lang="en">Explore Properties</span>
-          <span lang="zh">探索房产</span>
-        </button>
-      </div>
-    </div>
-    <div class="hero-right">
-      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2070" alt="Premium Property">
-    </div>
-  </section>
+    <header class="hero">
+        <h1>Modern apartments for flexible living</h1>
+        <p>Experience the home that moves with you for a month, a year, or longer.</p>
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Where to? (City, neighborhood...)" />
+            <button class="btn-search">Search</button>
+        </div>
+    </header>
 
-  <section class="features-section">
-    <h2>
-      <span lang="en">Our Core Services</span>
-      <span lang="zh">我们的核心服务</span>
-    </h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <span class="feature-icon">🏠</span>
-        <h3><span lang="en">Full Management</span><span lang="zh">全程托管</span></h3>
-        <p><span lang="en">From cleaning and maintenance to guest communication and booking.</span><span lang="zh">从清洁维护到客户沟通和预订管理，全方位服务。</span></p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">📈</span>
-        <h3><span lang="en">Revenue Growth</span><span lang="zh">收益提升</span></h3>
-        <p><span lang="en">Dynamic pricing and expert marketing to maximize your property's ROI.</span><span lang="zh">动态定价和专家营销，最大化您的房产投资回报。</span></p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">🛡️</span>
-        <h3><span lang="en">Safe & Secure</span><span lang="zh">安全保障</span></h3>
-        <p><span lang="en">Fully licensed management. Your property is in professional hands.</span><span lang="zh">持证管理，您的房产由专业团队悉心照料。</span></p>
-      </div>
-    </div>
-  </section>
+    <main class="container">
+        <section>
+            <h2 class="section-title">Explore our featured cities</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-img" style="background: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80') center/cover;"></div>
+                    <div class="card-content">
+                        <div class="card-title">Paris</div>
+                        <div class="card-desc">The city of light and love.</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=400&q=80') center/cover;"></div>
+                    <div class="card-content">
+                        <div class="card-title">London</div>
+                        <div class="card-desc">Modern living in a historic city.</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background: url('https://images.unsplash.com/photo-1525625239911-9881816742f4?auto=format&fit=crop&w=400&q=80') center/cover;"></div>
+                    <div class="card-content">
+                        <div class="card-title">Athens</div>
+                        <div class="card-desc">Where history meets the future.</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background: url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=400&q=80') center/cover;"></div>
+                    <div class="card-content">
+                        <div class="card-title">New York</div>
+                        <div class="card-desc">The center of the world.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-col">
-        <span class="footer-logo">EUROPEAN GATE PC</span>
-        <p style="opacity: 0.6; font-size: 14px;">
-          <span lang="en">Providing premium real estate services and property management in Athens and beyond.</span>
-          <span lang="zh">在雅典及其他地区提供优质的房地产服务和物业管理。</span>
-        </p>
-      </div>
-      <div class="footer-col">
-        <h4><span lang="en">Contact Info</span><span lang="zh">联系信息</span></h4>
-        <ul>
-          <li>Email: <a href="mailto:yangliangbin@egcgr.com">yangliangbin@egcgr.com</a></li>
-          <li>Tel: <a href="tel:+306946096373">+30 6946096373</a></li>
-          <li>Web: <a href="https://www.egcgr.com" target="_blank">www.egcgr.com</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4><span lang="en">Location</span><span lang="zh">办公地址</span></h4>
-        <ul>
-          <li><span lang="en">Athens, Greece</span><span lang="zh">希腊 · 雅典</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2026 EUROPEAN GATE PC. All rights reserved.
-    </div>
-  </footer>
+        <section style="background: #fdfdfd; padding: 80px 40px; border-radius: 20px; margin-bottom: 100px;">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h2 class="section-title">Why choose European Gate?</h2>
+                <div style="display: flex; flex-direction: column; gap: 30px; text-align: left;">
+                    <div>
+                        <h3 style="margin-bottom: 10px;">Fully furnished & move-in ready</h3>
+                        <p>Every home is expertly designed and includes high-quality furniture, high-speed Wi-Fi, and premium linens.</p>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 10px;">Flexible stays</h3>
+                        <p>Stay for a month, a year, or longer. Easily move between cities in our global network.</p>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 10px;">24/7 Guest Support</h3>
+                        <p>Our dedicated team and mobile app make sure your stay is seamless from start to finish.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <script>
-    function setLang(lang) {
-      const body = document.body;
-      const btns = document.querySelectorAll('.lang-btn');
-      
-      if (lang === 'zh') {
-        body.classList.add('lang-zh');
-        btns[1].classList.add('active');
-        btns[0].classList.remove('active');
-      } else {
-        body.classList.remove('lang-zh');
-        btns[0].classList.add('active');
-        btns[1].classList.remove('active');
-      }
-    }
-  </script>
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">EUROPEAN GATE</div>
+                <p>Redefining modern living through flexibility and design.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Guest App</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 European Gate PC. All rights reserved.
+        </div>
+    </footer>
+
 </body>
 </html>
