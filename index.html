@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>European Gate PC – Premium Real Estate Management</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #1c2b4a;
+      background: #fff;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; width: 100%; object-fit: cover; }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #1c2b4a;
+    }
+    .nav-logo svg {
+      width: 36px; height: 36px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links li a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1c2b4a;
+      transition: color 0.2s;
+    }
+    .nav-links li a:hover { color: #4a6fa5; }
+    .nav-cta {
+      background: #1c2b4a;
+      color: #fff !important;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #4a6fa5; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding-top: 80px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-left {
+      padding: 80px 64px 80px 80px;
+      z-index: 2;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: #eef2f8;
+      color: #4a6fa5;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: 1.1;
+      color: #1c2b4a;
+      margin-bottom: 24px;
+    }
+    .hero p {
+      font-size: 17px;
+      color: #4a5568;
+      max-width: 420px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex; gap: 16px; flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1c2b4a;
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: #4a6fa5; transform: translateY(-1px); }
+    .hero-right {
+      position: relative;
+      height: 100vh;
+    }
+    .hero-right img {
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0 0 0 80px;
+    }
+
+    /* ===== SEARCH ===== */
+    .search-section {
+      background: #f7f9fc;
+      padding: 60px 80px;
+    }
+    .search-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 70px;
+      padding: 10px 10px 10px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 4px 30px rgba(28,43,74,0.1);
+    }
+    .search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      font-family: 'DM Sans', sans-serif;
+      color: #1c2b4a;
+      background: transparent;
+    }
+
+    /* ===== FEATURES ===== */
+    .features-section {
+      padding: 100px 80px;
+      text-align: center;
+    }
+    .features-section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      color: #1c2b4a;
+      margin-bottom: 60px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 48px 32px;
+      border: 1px solid #f0f0f0;
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      box-shadow: 0 20px 60px rgba(28,43,74,0.1);
+      transform: translateY(-8px);
+    }
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 24px;
+      display: block;
+    }
+    .feature-card h3 {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: #8a9ab8;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1c2b4a;
+      color: #fff;
+      padding: 80px 80px 40px;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+    .footer-logo {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 24px;
+      display: block;
+    }
+    .footer-col h4 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      color: #a8c4e8;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 12px;
+    }
+    .footer-col ul li a {
+      font-size: 14px;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .footer-col ul li a:hover { opacity: 1; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 40px;
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="8" fill="#1C2B4A"/>
+        <path d="M12 28V12H28V28H12ZM14 26H26V14H14V26Z" fill="white"/>
+        <path d="M18 18H22V22H18V18Z" fill="white"/>
+      </svg>
+      EUROPEAN GATE
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Property Management</a></li>
+      <li><a href="#">List with us</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-left">
+      <span class="hero-tag">Real Estate Excellence</span>
+      <h1>EUROPEAN GATE</h1>
+      <p>As the most professional real estate management company in Greece, we offer bespoke solutions for owners and investors.</p>
+      <div class="hero-actions">
+        <button class="btn-primary">Explore Properties</button>
+        <button class="btn-secondary">Learn More</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2070" alt="Premium Property">
+    </div>
+  </section>
+
+  <section class="search-section">
+    <div class="search-box">
+      <input type="text" placeholder="Search by city, neighborhood or ZIP...">
+      <button class="btn-primary">Search Now</button>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <h2>Property Management, Redefined.</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🏠</span>
+        <h3>Full Management</h3>
+        <p>From cleaning and maintenance to guest communication and booking management.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📈</span>
+        <h3>Revenue Growth</h3>
+        <p>Dynamic pricing and expert marketing to maximize your property's ROI.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🛡️</span>
+        <h3>Peace of Mind</h3>
+        <p>Fully licensed and insured management. Your property is in safe hands.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <span class="footer-logo">EUROPEAN GATE PC</span>
+        <p style="opacity: 0.6; font-size: 14px; line-height: 1.8;">Providing premium real estate services and property management in Athens and beyond. Excellence in every detail.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Short-term Rental</a></li>
+          <li><a href="#">Long-term Management</a></li>
+          <li><a href="#">Renovation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">info@europeangate.gr</a></li>
+          <li><a href="#">+30 210 123 4567</a></li>
+          <li><a href="#">Athens, Greece</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 EUROPEAN GATE PC. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
