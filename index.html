@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>European Gate PC – Premium Real Estate Management</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <title>EUROPEAN GATE PC – Premium Real Estate Management</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
       color: #1c2b4a;
       background: #fff;
       line-height: 1.6;
@@ -26,7 +26,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 48px;
+      padding: 15px 48px;
       background: rgba(255,255,255,0.97);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid #f0f0f0;
@@ -57,16 +57,26 @@
       transition: color 0.2s;
     }
     .nav-links li a:hover { color: #4a6fa5; }
-    .nav-cta {
-      background: #1c2b4a;
-      color: #fff !important;
-      padding: 10px 24px;
+    .lang-switcher {
+      display: flex;
+      gap: 8px;
+      background: #eef2f8;
+      padding: 4px;
       border-radius: 50px;
-      font-size: 14px;
-      font-weight: 600;
-      transition: background 0.2s;
     }
-    .nav-cta:hover { background: #4a6fa5; }
+    .lang-btn {
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: #1c2b4a;
+      color: #fff;
+    }
 
     /* ===== HERO ===== */
     .hero {
@@ -108,9 +118,6 @@
       margin-bottom: 40px;
       line-height: 1.7;
     }
-    .hero-actions {
-      display: flex; gap: 16px; flex-wrap: wrap;
-    }
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -134,32 +141,6 @@
       height: 100%;
       object-fit: cover;
       border-radius: 0 0 0 80px;
-    }
-
-    /* ===== SEARCH ===== */
-    .search-section {
-      background: #f7f9fc;
-      padding: 60px 80px;
-    }
-    .search-box {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #fff;
-      border-radius: 70px;
-      padding: 10px 10px 10px 32px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      box-shadow: 0 4px 30px rgba(28,43,74,0.1);
-    }
-    .search-box input {
-      flex: 1;
-      border: none;
-      outline: none;
-      font-size: 16px;
-      font-family: 'DM Sans', sans-serif;
-      color: #1c2b4a;
-      background: transparent;
     }
 
     /* ===== FEATURES ===== */
@@ -196,14 +177,6 @@
       margin-bottom: 24px;
       display: block;
     }
-    .feature-card h3 {
-      font-size: 20px;
-      margin-bottom: 16px;
-    }
-    .feature-card p {
-      font-size: 14px;
-      color: #8a9ab8;
-    }
 
     /* ===== FOOTER ===== */
     footer {
@@ -235,13 +208,10 @@
     }
     .footer-col ul li {
       margin-bottom: 12px;
-    }
-    .footer-col ul li a {
       font-size: 14px;
-      opacity: 0.7;
-      transition: opacity 0.2s;
+      opacity: 0.8;
     }
-    .footer-col ul li a:hover { opacity: 1; }
+    .footer-col ul li a:hover { opacity: 1; text-decoration: underline; }
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.1);
       padding-top: 40px;
@@ -249,6 +219,17 @@
       font-size: 12px;
       opacity: 0.5;
     }
+
+    /* Translation Classes */
+    [lang="zh"] { display: none; }
+    body.lang-zh [lang="en"] { display: none; }
+    body.lang-zh [lang="zh"] { display: inline; }
+    body.lang-zh .feature-card [lang="zh"], 
+    body.lang-zh h1 [lang="zh"], 
+    body.lang-zh p [lang="zh"],
+    body.lang-zh h2 [lang="zh"],
+    body.lang-zh h3 [lang="zh"],
+    body.lang-zh li [lang="zh"] { display: block; }
   </style>
 </head>
 <body>
@@ -260,24 +241,41 @@
         <path d="M12 28V12H28V28H12ZM14 26H26V14H14V26Z" fill="white"/>
         <path d="M18 18H22V22H18V18Z" fill="white"/>
       </svg>
-      EUROPEAN GATE
+      <span lang="en">EUROPEAN GATE</span>
+      <span lang="zh">欧洲之门公司</span>
     </div>
     <ul class="nav-links">
-      <li><a href="#">Property Management</a></li>
-      <li><a href="#">List with us</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#" class="nav-cta">Contact Us</a></li>
+      <li><a href="#"><span lang="en">Home</span><span lang="zh">首页</span></a></li>
+      <li><a href="#"><span lang="en">Management</span><span lang="zh">资产管理</span></a></li>
+      <li><a href="#"><span lang="en">About</span><span lang="zh">关于我们</span></a></li>
+      <li>
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" onclick="setLang('zh')">中文</button>
+        </div>
+      </li>
     </ul>
   </nav>
 
   <section class="hero">
     <div class="hero-left">
-      <span class="hero-tag">Real Estate Excellence</span>
-      <h1>EUROPEAN GATE</h1>
-      <p>As the most professional real estate management company in Greece, we offer bespoke solutions for owners and investors.</p>
+      <span class="hero-tag">
+        <span lang="en">Real Estate Excellence</span>
+        <span lang="zh">卓越房地产服务</span>
+      </span>
+      <h1>
+        <span lang="en">EUROPEAN GATE PC</span>
+        <span lang="zh">欧洲之门公司</span>
+      </h1>
+      <p>
+        <span lang="en">As the most professional real estate management company in Greece, we offer bespoke solutions for owners and investors.</span>
+        <span lang="zh">作为希腊最专业的房地产管理公司，我们为业主和投资者提供定制化解决方案。</span>
+      </p>
       <div class="hero-actions">
-        <button class="btn-primary">Explore Properties</button>
-        <button class="btn-secondary">Learn More</button>
+        <button class="btn-primary">
+          <span lang="en">Explore Properties</span>
+          <span lang="zh">探索房产</span>
+        </button>
       </div>
     </div>
     <div class="hero-right">
@@ -285,30 +283,26 @@
     </div>
   </section>
 
-  <section class="search-section">
-    <div class="search-box">
-      <input type="text" placeholder="Search by city, neighborhood or ZIP...">
-      <button class="btn-primary">Search Now</button>
-    </div>
-  </section>
-
   <section class="features-section">
-    <h2>Property Management, Redefined.</h2>
+    <h2>
+      <span lang="en">Our Core Services</span>
+      <span lang="zh">我们的核心服务</span>
+    </h2>
     <div class="features-grid">
       <div class="feature-card">
         <span class="feature-icon">🏠</span>
-        <h3>Full Management</h3>
-        <p>From cleaning and maintenance to guest communication and booking management.</p>
+        <h3><span lang="en">Full Management</span><span lang="zh">全程托管</span></h3>
+        <p><span lang="en">From cleaning and maintenance to guest communication and booking.</span><span lang="zh">从清洁维护到客户沟通和预订管理，全方位服务。</span></p>
       </div>
       <div class="feature-card">
         <span class="feature-icon">📈</span>
-        <h3>Revenue Growth</h3>
-        <p>Dynamic pricing and expert marketing to maximize your property's ROI.</p>
+        <h3><span lang="en">Revenue Growth</span><span lang="zh">收益提升</span></h3>
+        <p><span lang="en">Dynamic pricing and expert marketing to maximize your property's ROI.</span><span lang="zh">动态定价和专家营销，最大化您的房产投资回报。</span></p>
       </div>
       <div class="feature-card">
         <span class="feature-icon">🛡️</span>
-        <h3>Peace of Mind</h3>
-        <p>Fully licensed and insured management. Your property is in safe hands.</p>
+        <h3><span lang="en">Safe & Secure</span><span lang="zh">安全保障</span></h3>
+        <p><span lang="en">Fully licensed management. Your property is in professional hands.</span><span lang="zh">持证管理，您的房产由专业团队悉心照料。</span></p>
       </div>
     </div>
   </section>
@@ -317,30 +311,23 @@
     <div class="footer-content">
       <div class="footer-col">
         <span class="footer-logo">EUROPEAN GATE PC</span>
-        <p style="opacity: 0.6; font-size: 14px; line-height: 1.8;">Providing premium real estate services and property management in Athens and beyond. Excellence in every detail.</p>
+        <p style="opacity: 0.6; font-size: 14px;">
+          <span lang="en">Providing premium real estate services and property management in Athens and beyond.</span>
+          <span lang="zh">在雅典及其他地区提供优质的房地产服务和物业管理。</span>
+        </p>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4><span lang="en">Contact Info</span><span lang="zh">联系信息</span></h4>
         <ul>
-          <li><a href="#">Short-term Rental</a></li>
-          <li><a href="#">Long-term Management</a></li>
-          <li><a href="#">Renovation</a></li>
+          <li>Email: <a href="mailto:yangliangbin@egcgr.com">yangliangbin@egcgr.com</a></li>
+          <li>Tel: <a href="tel:+306946096373">+30 6946096373</a></li>
+          <li>Web: <a href="https://www.egcgr.com" target="_blank">www.egcgr.com</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4><span lang="en">Location</span><span lang="zh">办公地址</span></h4>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="#">info@europeangate.gr</a></li>
-          <li><a href="#">+30 210 123 4567</a></li>
-          <li><a href="#">Athens, Greece</a></li>
+          <li><span lang="en">Athens, Greece</span><span lang="zh">希腊 · 雅典</span></li>
         </ul>
       </div>
     </div>
@@ -349,5 +336,21 @@
     </div>
   </footer>
 
+  <script>
+    function setLang(lang) {
+      const body = document.body;
+      const btns = document.querySelectorAll('.lang-btn');
+      
+      if (lang === 'zh') {
+        body.classList.add('lang-zh');
+        btns[1].classList.add('active');
+        btns[0].classList.remove('active');
+      } else {
+        body.classList.remove('lang-zh');
+        btns[0].classList.add('active');
+        btns[1].classList.remove('active');
+      }
+    }
+  </script>
 </body>
 </html>
