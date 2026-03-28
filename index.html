@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EUROPEAN GATE PC – Premium Real Estate Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+    <title>EUROPEAN GATE PC – Greece Real Estate & Golden Visa</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <style>
         /* ===== RESET & BASE ===== */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,7 +34,7 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid #f0f0f0;
         }
-        .nav-logo { font-size: 24px; font-weight: 700; color: #273656; display: flex; align-items: center; gap: 8px; }
+        .nav-logo { font-size: 24px; font-weight: 700; color: #273656; }
         .nav-logo span { color: #4a90e2; }
         .nav-links { display: flex; gap: 30px; align-items: center; }
         .nav-links a { font-weight: 500; font-size: 15px; }
@@ -44,8 +44,8 @@
 
         /* ===== HERO ===== */
         .hero {
-            height: 85vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80') center/cover;
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1516483642144-7386221788cd?auto=format&fit=crop&w=1920&q=80') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -54,46 +54,38 @@
             text-align: center;
             padding: 0 20px;
         }
-        .hero h1 { font-size: 56px; margin-bottom: 20px; font-weight: 700; max-width: 800px; }
-        .hero p { font-size: 20px; margin-bottom: 40px; opacity: 0.9; }
+        .hero h1 { font-size: 56px; margin-bottom: 20px; font-weight: 700; max-width: 900px; }
+        .hero p { font-size: 20px; margin-bottom: 40px; opacity: 0.9; max-width: 700px; }
 
-        .search-container {
-            background: #fff;
-            padding: 10px;
-            border-radius: 100px;
-            display: flex;
-            width: 100%;
-            max-width: 800px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .search-box { flex: 1; padding: 15px 25px; border: none; outline: none; font-size: 16px; border-radius: 50px; }
-        .btn-search { background: #273656; color: #fff; border: none; padding: 15px 35px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: 0.3s; }
-        .btn-search:hover { background: #1a253d; }
-
-        /* ===== SECTIONS ===== */
+        /* ===== SERVICES ===== */
         section { padding: 100px 0; }
-        .section-title { font-size: 32px; margin-bottom: 40px; font-weight: 700; }
+        .section-title { font-size: 32px; margin-bottom: 10px; font-weight: 700; text-align: center; }
+        .section-subtitle { font-size: 18px; color: #666; text-align: center; margin-bottom: 60px; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-        .card { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: 0.3s; cursor: pointer; }
-        .card:hover { transform: translateY(-5px); }
-        .card-img { height: 200px; }
-        .card-content { padding: 20px; }
-        .card-title { font-weight: 700; font-size: 18px; margin-bottom: 5px; }
-        .card-desc { font-size: 14px; color: #666; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+        .service-card { padding: 40px; border-radius: 20px; background: #f9f9f9; transition: 0.3s; border: 1px solid transparent; }
+        .service-card:hover { transform: translateY(-10px); background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: #eee; }
+        .service-icon { font-size: 40px; margin-bottom: 20px; }
+        .service-card h3 { font-size: 22px; margin-bottom: 15px; font-weight: 700; }
+        .service-card p { color: #666; font-size: 16px; }
+
+        /* ===== WHY GREECE ===== */
+        .highlight-section { background: #273656; color: #fff; padding: 100px 0; }
+        .highlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .highlight-content h2 { font-size: 40px; margin-bottom: 25px; line-height: 1.2; }
+        .highlight-content p { font-size: 18px; opacity: 0.8; margin-bottom: 30px; }
+        .highlight-img { border-radius: 20px; overflow: hidden; height: 400px; }
 
         /* ===== FOOTER ===== */
-        footer { background: #f9f9f9; padding: 80px 0 40px; border-top: 1px solid #eee; }
+        footer { background: #fff; padding: 80px 0 40px; border-top: 1px solid #eee; }
         .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 60px; }
-        .footer-logo { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
         .footer-col h4 { margin-bottom: 20px; font-size: 16px; }
         .footer-col ul li { margin-bottom: 10px; font-size: 14px; color: #666; }
         .footer-bottom { border-top: 1px solid #eee; padding-top: 40px; text-align: center; font-size: 14px; color: #999; }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .nav-links { display: none; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
+        @media (max-width: 992px) {
+            .highlight-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 40px; }
         }
     </style>
 </head>
@@ -102,73 +94,69 @@
     <nav>
         <div class="nav-logo">EUROPEAN<span>GATE</span></div>
         <div class="nav-links">
-            <a href="#">Explore</a>
-            <a href="#">For Owners</a>
-            <a href="#">Help</a>
-            <a href="#" class="btn-login">Login / Sign up</a>
+            <a href="#services">Services</a>
+            <a href="#about">About Greece</a>
+            <a href="#">Contact</a>
+            <a href="#" class="btn-login">Client Portal</a>
         </div>
     </nav>
 
     <header class="hero">
-        <h1>Modern apartments for flexible living</h1>
-        <p>Experience the home that moves with you for a month, a year, or longer.</p>
-        <div class="search-container">
-            <input type="text" class="search-box" placeholder="Where to? (City, neighborhood...)" />
-            <button class="btn-search">Search</button>
-        </div>
+        <h1>Your Trusted Partner for Greece Real Estate</h1>
+        <p>Premium property management and professional Golden Visa services tailored for global investors in Greece.</p>
+        <a href="#services" class="btn-login" style="background: #fff; color: #273656; border: none; padding: 15px 40px;">Explore Our Services</a>
     </header>
 
-    <main class="container">
+    <main class="container" id="services">
         <section>
-            <h2 class="section-title">Explore our featured cities</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-img" style="background: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80') center/cover;"></div>
-                    <div class="card-content">
-                        <div class="card-title">Paris</div>
-                        <div class="card-desc">The city of light and love.</div>
-                    </div>
+            <h2 class="section-title">Comprehensive Property Solutions</h2>
+            <p class="section-subtitle">We handle everything from acquisition to management and legal compliance.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Property Management</h3>
+                    <p>Expert care for your Greek property. We handle maintenance, tenant relations, and maximize your rental yields while you're away.</p>
                 </div>
-                <div class="card">
-                    <div class="card-img" style="background: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=400&q=80') center/cover;"></div>
-                    <div class="card-content">
-                        <div class="card-title">London</div>
-                        <div class="card-desc">Modern living in a historic city.</div>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon">📜</div>
+                    <h3>Golden Visa Processing</h3>
+                    <p>Full-service support for Greek Golden Visa applications. We guide you through every legal step to secure your residency.</p>
                 </div>
-                <div class="card">
-                    <div class="card-img" style="background: url('https://images.unsplash.com/photo-1525625239911-9881816742f4?auto=format&fit=crop&w=400&q=80') center/cover;"></div>
-                    <div class="card-content">
-                        <div class="card-title">Athens</div>
-                        <div class="card-desc">Where history meets the future.</div>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>Real Estate Sales</h3>
+                    <p>Access exclusive listings across Greece. Our local market knowledge ensures you find the perfect investment or home.</p>
                 </div>
-                <div class="card">
-                    <div class="card-img" style="background: url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=400&q=80') center/cover;"></div>
-                    <div class="card-content">
-                        <div class="card-title">New York</div>
-                        <div class="card-desc">The center of the world.</div>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Property Insurance</h3>
+                    <p>Comprehensive insurance solutions for your home in Greece, protecting your investment against all risks.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h3>Golden Visa Insurance</h3>
+                    <p>Specialized personal health insurance plans that meet the specific legal requirements for Golden Visa applicants.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Property Maintenance</h3>
+                    <p>From routine repairs to full renovations. Our trusted local team keeps your property in top condition.</p>
                 </div>
             </div>
         </section>
 
-        <section style="background: #fdfdfd; padding: 80px 40px; border-radius: 20px; margin-bottom: 100px;">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-                <h2 class="section-title">Why choose European Gate?</h2>
-                <div style="display: flex; flex-direction: column; gap: 30px; text-align: left;">
-                    <div>
-                        <h3 style="margin-bottom: 10px;">Fully furnished & move-in ready</h3>
-                        <p>Every home is expertly designed and includes high-quality furniture, high-speed Wi-Fi, and premium linens.</p>
-                    </div>
-                    <div>
-                        <h3 style="margin-bottom: 10px;">Flexible stays</h3>
-                        <p>Stay for a month, a year, or longer. Easily move between cities in our global network.</p>
-                    </div>
-                    <div>
-                        <h3 style="margin-bottom: 10px;">24/7 Guest Support</h3>
-                        <p>Our dedicated team and mobile app make sure your stay is seamless from start to finish.</p>
-                    </div>
+        <section class="highlight-section" style="border-radius: 30px; margin-bottom: 100px;">
+            <div class="container highlight-grid" id="about">
+                <div class="highlight-img" style="background: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
+                <div class="highlight-content">
+                    <h2>Why Invest in Greece?</h2>
+                    <p>Greece offers one of the most competitive Golden Visa programs in Europe, combined with a booming real estate market and unparalleled lifestyle.</p>
+                    <ul style="opacity: 0.9; margin-left: 20px; list-style: disc;">
+                        <li style="margin-bottom: 10px;">Strategic location at the crossroads of three continents</li>
+                        <li style="margin-bottom: 10px;">Strong tourism growth driving rental demand</li>
+                        <li style="margin-bottom: 10px;">Safe and stable environment in the EU</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -178,34 +166,34 @@
         <div class="container footer-grid">
             <div class="footer-col">
                 <div class="footer-logo">EUROPEAN GATE</div>
-                <p>Redefining modern living through flexibility and design.</p>
+                <p>Premium Real Estate & Golden Visa Services in Greece.</p>
             </div>
             <div class="footer-col">
-                <h4>Company</h4>
+                <h4>Services</h4>
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li>Property Management</li>
+                    <li>Golden Visa</li>
+                    <li>Real Estate Sales</li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Support</h4>
                 <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Guest App</a></li>
+                    <li>Help Center</li>
+                    <li>Contact Us</li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Legal</h4>
+                <h4>Language</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li>English</li>
+                    <li>中文 (Chinese)</li>
+                    <li>Ελληνικά (Greek)</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2025 European Gate PC. All rights reserved.
+            &copy; 2026 European Gate PC. All rights reserved.
         </div>
     </footer>
 
