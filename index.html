@@ -63,11 +63,12 @@
         .hero h1 { font-size: 56px; margin-bottom: 20px; font-weight: 700; max-width: 900px; }
         .hero p { font-size: 20px; margin-bottom: 40px; opacity: 0.9; max-width: 700px; }
 
-        /* ===== SERVICES ===== */
-        section { padding: 100px 0; }
-        .section-title { font-size: 32px; margin-bottom: 10px; font-weight: 700; text-align: center; }
-        .section-subtitle { font-size: 18px; color: #666; text-align: center; margin-bottom: 60px; }
+        /* ===== SECTIONS ===== */
+        section { padding: 80px 0; }
+        .section-title { font-size: 36px; margin-bottom: 15px; font-weight: 700; text-align: center; }
+        .section-subtitle { font-size: 18px; color: #666; text-align: center; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
 
+        /* ===== SERVICES GRID ===== */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
         .service-card { padding: 40px; border-radius: 20px; background: #f9f9f9; transition: 0.3s; border: 1px solid transparent; }
         .service-card:hover { transform: translateY(-10px); background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: #eee; }
@@ -75,8 +76,29 @@
         .service-card h3 { font-size: 22px; margin-bottom: 15px; font-weight: 700; }
         .service-card p { color: #666; font-size: 16px; }
 
-        /* ===== WHY GREECE ===== */
-        .highlight-section { background: #273656; color: #fff; padding: 100px 0; }
+        /* ===== PROPERTY GRID ===== */
+        .property-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
+        .property-card { border-radius: 20px; overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; position: relative; }
+        .property-card:hover { transform: translateY(-10px); }
+        .property-img { height: 260px; background-size: cover; background-position: center; }
+        .property-badge { position: absolute; top: 20px; right: 20px; background: #4a90e2; color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+        .property-info { padding: 25px; }
+        .property-price { font-size: 24px; font-weight: 700; color: #273656; margin-bottom: 5px; }
+        .property-loc { display: flex; align-items: center; gap: 5px; color: #666; font-size: 14px; margin-bottom: 15px; }
+        .property-specs { display: flex; gap: 20px; font-size: 14px; border-top: 1px solid #eee; padding-top: 15px; color: #444; }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-section { background: #fdfdfd; }
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
+        .form-control { width: 100%; padding: 12px 16px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 15px; outline: none; }
+        .form-control:focus { border-color: #273656; }
+        .btn-submit { background: #273656; color: #fff; border: none; padding: 15px 30px; border-radius: 50px; font-weight: 700; cursor: pointer; transition: 0.3s; width: 100%; }
+        .btn-submit:hover { background: #1a253d; }
+
+        /* ===== HIGHLIGHT SECTION ===== */
+        .highlight-section { background: #273656; color: #fff; padding: 100px 0; border-radius: 40px; margin-bottom: 80px; }
         .highlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .highlight-content h2 { font-size: 40px; margin-bottom: 25px; line-height: 1.2; }
         .highlight-content p { font-size: 18px; opacity: 0.8; margin-bottom: 30px; }
@@ -90,13 +112,14 @@
         .footer-bottom { border-top: 1px solid #eee; padding-top: 40px; text-align: center; font-size: 14px; color: #999; }
 
         @media (max-width: 992px) {
-            .highlight-grid { grid-template-columns: 1fr; }
+            .highlight-grid, .contact-container { grid-template-columns: 1fr; }
             .hero h1 { font-size: 40px; }
             .nav-right { gap: 15px; }
             .nav-links { display: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
-        /* Language Toggle Logic Classes */
+        /* Language Toggle Logic */
         [lang-content="zh"] { display: none; }
         body.lang-zh [lang-content="en"] { display: none; }
         body.lang-zh [lang-content="zh"] { display: block; }
@@ -110,102 +133,173 @@
         <div class="nav-right">
             <div class="nav-links">
                 <a href="#services"><span lang-content="en">Services</span><span lang-content="zh">业务范围</span></a>
-                <a href="#about"><span lang-content="en">About Greece</span><span lang-content="zh">关于希腊</span></a>
-                <a href="#"><span lang-content="en">Contact</span><span lang-content="zh">联系我们</span></a>
+                <a href="#properties"><span lang-content="en">Properties</span><span lang-content="zh">优质房源</span></a>
+                <a href="#contact"><span lang-content="en">Contact</span><span lang-content="zh">联系我们</span></a>
             </div>
             <div class="lang-switch">
-                <div class="lang-btn active" onclick="setLang('en')">EN</div>
-                <div class="lang-btn" onclick="setLang('zh')">中文</div>
+                <div class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</div>
+                <div class="lang-btn" id="btn-zh" onclick="setLang('zh')">中文</div>
             </div>
             <a href="#" class="btn-portal"><span lang-content="en">Client Portal</span><span lang-content="zh">客户登入</span></a>
         </div>
     </nav>
 
     <header class="hero">
-        <h1 lang-content="en">Your Trusted Partner for Greece Real Estate</h1>
-        <h1 lang-content="zh">您最信赖的希腊房产合作伙伴</h1>
-        <p lang-content="en">Premium property management and professional Golden Visa services tailored for global investors in Greece.</p>
-        <p lang-content="zh">为您量身定制的希腊优质房产管理与专业黄金签证服务。</p>
-        <a href="#services" class="btn-portal" style="background: #fff; color: #273656; border: none; padding: 15px 40px;">
-            <span lang-content="en">Explore Our Services</span>
-            <span lang-content="zh">探索我们的服务</span>
+        <h1 lang-content="en">Premium Greece Real Estate Management</h1>
+        <h1 lang-content="zh">希腊优质房产与资产管理专家</h1>
+        <p lang-content="en">Professional solutions for property owners and Golden Visa investors across Greece.</p>
+        <p lang-content="zh">为您量身定制的希腊优质房产托管与黄金签证全流程服务。</p>
+        <a href="#contact" class="btn-portal" style="background: #fff; color: #273656; border: none; padding: 15px 40px;">
+            <span lang-content="en">Get a Free Consultation</span>
+            <span lang-content="zh">获取免费咨询</span>
         </a>
     </header>
 
-    <main class="container" id="services">
-        <section>
+    <main class="container">
+        <!-- Services -->
+        <section id="services">
             <h2 class="section-title">
-                <span lang-content="en">Comprehensive Property Solutions</span>
-                <span lang-content="zh">全方位房产解决方案</span>
+                <span lang-content="en">Our Core Services</span>
+                <span lang-content="zh">我们的核心业务</span>
             </h2>
-            <p class="section-subtitle" lang-content="en">We handle everything from acquisition to management and legal compliance.</p>
-            <p class="section-subtitle" lang-content="zh">从房产购置、托管管理到法律合规，我们为您打理一切。</p>
+            <p class="section-subtitle" lang-content="en">We provide a one-stop solution for your investment in Greece, from acquisition to ongoing management.</p>
+            <p class="section-subtitle" lang-content="zh">我们为您的希腊投资提供一站式解决方案，涵盖从房产购置到持续托管的全生命周期。</p>
             
             <div class="services-grid">
-                <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-icon">🏠</div>
-                    <h3 lang-content="en">Property Management</h3>
-                    <h3 lang-content="zh">房产管理</h3>
-                    <p lang-content="en">Expert care for your Greek property. We handle maintenance, tenant relations, and maximize your rental yields while you're away.</p>
-                    <p lang-content="zh">专业的希腊房产托管。我们负责维护、租客沟通，在您离开期间为您实现租金收益最大化。</p>
+                    <h3 lang-content="en">Property Management</h3><h3 lang-content="zh">房产托管</h3>
+                    <p lang-content="en">Maximized rental yields and maintenance-free ownership for overseas investors.</p>
+                    <p lang-content="zh">为海外投资者实现租金收益最大化，提供无忧的房产维护与托管。</p>
                 </div>
-                <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-icon">📜</div>
-                    <h3 lang-content="en">Golden Visa Processing</h3>
-                    <h3 lang-content="zh">黄金签证办理</h3>
-                    <p lang-content="en">Full-service support for Greek Golden Visa applications. We guide you through every legal step to secure your residency.</p>
-                    <p lang-content="zh">提供希腊黄金签证申请的全流程支持。我们引导您完成每一个法律步骤，确保顺利获得居留权。</p>
+                    <h3 lang-content="en">Golden Visa Services</h3><h3 lang-content="zh">黄金签证办理</h3>
+                    <p lang-content="en">Expert legal guidance for Greek residency through strategic real estate investment.</p>
+                    <p lang-content="zh">通过房产投资获取希腊居留权的专业法律指导与代办服务。</p>
                 </div>
-                <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-icon">🤝</div>
-                    <h3 lang-content="en">Real Estate Sales</h3>
-                    <h3 lang-content="zh">房产买卖</h3>
-                    <p lang-content="en">Access exclusive listings across Greece. Our local market knowledge ensures you find the perfect investment or home.</p>
-                    <p lang-content="zh">获取希腊全境的独家房源。凭借本地市场知识，我们助您找到完美的投资项目或理想家园。</p>
+                    <h3 lang-content="en">Sales & Acquisition</h3><h3 lang-content="zh">房产买卖</h3>
+                    <p lang-content="en">Exclusive access to off-market properties and investment opportunities across Greece.</p>
+                    <p lang-content="zh">获取希腊全境的独家房源、非公开物业及优质投资机会。</p>
                 </div>
-                <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-icon">🛡️</div>
-                    <h3 lang-content="en">Property Insurance</h3>
-                    <h3 lang-content="zh">房屋保险</h3>
-                    <p lang-content="en">Comprehensive insurance solutions for your home in Greece, protecting your investment against all risks.</p>
-                    <p lang-content="zh">为您在希腊的家提供全面的保险方案，保护您的投资免受各类风险影响。</p>
-                </div>
-                <!-- Service 5 -->
-                <div class="service-card">
-                    <div class="service-icon">🏥</div>
-                    <h3 lang-content="en">Golden Visa Insurance</h3>
-                    <h3 lang-content="zh">黄金签证个人保险</h3>
-                    <p lang-content="en">Specialized personal health insurance plans that meet the specific legal requirements for Golden Visa applicants.</p>
-                    <p lang-content="zh">专门为黄金签证申请人设计的个人健康保险计划，完全符合法律要求。</p>
-                </div>
-                <!-- Service 6 -->
-                <div class="service-card">
-                    <div class="service-icon">🛠️</div>
-                    <h3 lang-content="en">Property Maintenance</h3>
-                    <h3 lang-content="zh">房屋维修</h3>
-                    <p lang-content="en">From routine repairs to full renovations. Our trusted local team keeps your property in top condition.</p>
-                    <p lang-content="zh">从日常维修到全面翻新。我们值得信赖的本地团队始终保持您的物业处于最佳状态。</p>
+                    <h3 lang-content="en">Insurance & Legal</h3><h3 lang-content="zh">保险与法律</h3>
+                    <p lang-content="en">Comprehensive property and Golden Visa health insurance tailored to your needs.</p>
+                    <p lang-content="zh">量身定制的全面房屋保险及符合黄金签证要求的健康保险计划。</p>
                 </div>
             </div>
         </section>
 
-        <section class="highlight-section" style="border-radius: 30px; margin-bottom: 100px;">
-            <div class="container highlight-grid" id="about">
+        <!-- Properties -->
+        <section id="properties">
+            <h2 class="section-title">
+                <span lang-content="en">Featured Opportunities</span>
+                <span lang-content="zh">精选投资机会</span>
+            </h2>
+            <p class="section-subtitle" lang-content="en">Explore our curated selection of high-yield properties in prime Athens locations.</p>
+            <p class="section-subtitle" lang-content="zh">探索我们在雅典核心区域精心挑选的高收益房产项目。</p>
+            
+            <div class="property-grid">
+                <!-- Prop 1 -->
+                <div class="property-card">
+                    <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80')"></div>
+                    <div class="property-badge" lang-content="en">Golden Visa Ready</div><div class="property-badge" lang-content="zh">符合签证要求</div>
+                    <div class="property-info">
+                        <div class="property-price">€285,000</div>
+                        <div class="property-loc">📍 Marousi, Athens</div>
+                        <h3 lang-content="en">Modern 2BR Apartment</h3><h3 lang-content="zh">现代两居室公寓</h3>
+                        <div class="property-specs">
+                            <span>🛏️ 2 Beds</span><span>🛁 1 Bath</span><span>📐 85m²</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Prop 2 -->
+                <div class="property-card">
+                    <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1542601039-497745778a87?auto=format&fit=crop&w=600&q=80')"></div>
+                    <div class="property-badge" lang-content="en">High Yield</div><div class="property-badge" lang-content="zh">高收益</div>
+                    <div class="property-info">
+                        <div class="property-price">€420,000</div>
+                        <div class="property-loc">📍 Glyfada, Athens</div>
+                        <h3 lang-content="en">Luxury Coastal Condo</h3><h3 lang-content="zh">滨海豪华公寓</h3>
+                        <div class="property-specs">
+                            <span>🛏️ 3 Beds</span><span>🛁 2 Baths</span><span>📐 110m²</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Prop 3 -->
+                <div class="property-card">
+                    <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&w=600&q=80')"></div>
+                    <div class="property-badge" lang-content="en">Newly Renovated</div><div class="property-badge" lang-content="zh">全新翻新</div>
+                    <div class="property-info">
+                        <div class="property-price">€255,000</div>
+                        <div class="property-loc">📍 Pangrati, Athens</div>
+                        <h3 lang-content="en">City Center Loft</h3><h3 lang-content="zh">市中心复式公寓</h3>
+                        <div class="property-specs">
+                            <span>🛏️ 1 Bed</span><span>🛁 1 Bath</span><span>📐 65m²</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Greece -->
+        <section class="highlight-section">
+            <div class="container highlight-grid">
                 <div class="highlight-img" style="background: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
                 <div class="highlight-content">
                     <h2 lang-content="en">Why Invest in Greece?</h2>
-                    <h2 lang-content="zh">为什么选择投资希腊？</h2>
-                    <p lang-content="en">Greece offers one of the most competitive Golden Visa programs in Europe, combined with a booming real estate market.</p>
-                    <p lang-content="zh">希腊提供欧洲最具竞争力的黄金签证计划，并拥有蓬勃发展的房地产市场。</p>
+                    <h2 lang-content="zh">为什么选择希腊？</h2>
+                    <p lang-content="en">Greece offers the most attractive residency-by-investment program in the EU, combined with a stable economy and booming tourism.</p>
+                    <p lang-content="zh">希腊提供欧盟最具吸引力的投资移民计划，同时拥有稳定的经济环境和蓬勃发展的旅游业。</p>
                     <ul style="opacity: 0.9; margin-left: 20px; list-style: disc;">
-                        <li><span lang-content="en">Strategic location at the crossroads of continents</span><span lang-content="zh">连接欧亚非三大洲的战略要地</span></li>
-                        <li><span lang-content="en">Strong tourism growth driving rental demand</span><span lang-content="zh">强劲的旅游业增长带动租赁需求</span></li>
-                        <li><span lang-content="en">Safe and stable environment in the EU</span><span lang-content="zh">安全稳定的欧盟成员国环境</span></li>
+                        <li><span lang-content="en">Competitive Golden Visa threshold</span><span lang-content="zh">极具竞争力的黄金签证门槛</span></li>
+                        <li><span lang-content="en">Strong rental growth (6-8% annually)</span><span lang-content="zh">强劲的租金增长（年均 6-8%）</span></li>
+                        <li><span lang-content="en">Safe, high-quality European lifestyle</span><span lang-content="zh">安全、高品质的欧洲生活方式</span></li>
                     </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+                <div>
+                    <h2 style="font-size: 36px; margin-bottom: 20px;">
+                        <span lang-content="en">Contact Our Experts</span>
+                        <span lang-content="zh">联系我们的专家</span>
+                    </h2>
+                    <p style="color: #666; font-size: 18px; margin-bottom: 30px;">
+                        <span lang-content="en">Get in touch for personalized property advice or Golden Visa consultancy.</span>
+                        <span lang-content="zh">欢迎随时联系我们，获取个性化的房产建议或黄金签证咨询。</span>
+                    </p>
+                    <div style="font-weight: 600;">
+                        <p>📧 info@europeangate.gr</p>
+                        <p>📞 +30 210 XXX XXXX</p>
+                        <p>📍 Marousi, Athens, Greece</p>
+                    </div>
+                </div>
+                <div style="background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05);">
+                    <form>
+                        <div class="form-group">
+                            <label><span lang-content="en">Full Name</span><span lang-content="zh">姓名</span></label>
+                            <input type="text" class="form-control" placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label><span lang-content="en">Email Address</span><span lang-content="zh">电子邮箱</span></label>
+                            <input type="email" class="form-control" placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label><span lang-content="en">Message</span><span lang-content="zh">留言内容</span></label>
+                            <textarea class="form-control" rows="4" placeholder="How can we help?"></textarea>
+                        </div>
+                        <button type="button" class="btn-submit">
+                            <span lang-content="en">Send Message</span>
+                            <span lang-content="zh">提交咨询</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -214,36 +308,30 @@
     <footer>
         <div class="container footer-grid">
             <div class="footer-col">
-                <div class="footer-logo">EUROPEAN GATE</div>
-                <p lang-content="en">Premium Real Estate & Golden Visa Services in Greece.</p>
-                <p lang-content="zh">希腊优质房产与黄金签证服务。</p>
+                <div class="footer-logo">EUROPEAN<span>GATE</span></div>
+                <p>Professional Greece Real Estate Management & Golden Visa Services.</p>
             </div>
             <div class="footer-col">
-                <h4 lang-content="en">Services</h4>
-                <h4 lang-content="zh">核心业务</h4>
+                <h4 lang-content="en">Services</h4><h4 lang-content="zh">业务范围</h4>
                 <ul>
-                    <li lang-content="en">Property Management</li>
-                    <li lang-content="zh">房产托管</li>
-                    <li lang-content="en">Golden Visa</li>
-                    <li lang-content="zh">黄金签证</li>
+                    <li lang-content="en">Property Management</li><li lang-content="zh">房产托管</li>
+                    <li lang-content="en">Golden Visa</li><li lang-content="zh">黄金签证</li>
+                    <li lang-content="en">Maintenance</li><li lang-content="zh">房屋维修</li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4 lang-content="en">Contact</h4>
-                <h4 lang-content="zh">联系我们</h4>
+                <h4 lang-content="en">Quick Links</h4><h4 lang-content="zh">快速链接</h4>
                 <ul>
-                    <li>Email: info@europeangate.gr</li>
-                    <li>Location: Marousi, Greece</li>
+                    <li><a href="#properties">Properties</a></li>
+                    <li><a href="#about">About Greece</a></li>
+                    <li><a href="#contact">Consultation</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4 lang-content="en">Platform</h4>
-                <h4 lang-content="zh">平台</h4>
+                <h4 lang-content="en">Legal</h4><h4 lang-content="zh">法律政策</h4>
                 <ul>
-                    <li lang-content="en">Guest App</li>
-                    <li lang-content="zh">客户APP</li>
-                    <li lang-content="en">Partner Portal</li>
-                    <li lang-content="zh">合作伙伴门户</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
                 </ul>
             </div>
         </div>
@@ -254,17 +342,12 @@
 
     <script>
         function setLang(lang) {
-            const btns = document.querySelectorAll('.lang-btn');
-            btns.forEach(btn => {
-                btn.classList.remove('active');
-                if(btn.innerText.toLowerCase() === lang || (lang === 'zh' && btn.innerText === '中文')) {
-                    btn.classList.add('active');
-                }
-            });
-            
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             if(lang === 'zh') {
+                document.getElementById('btn-zh').classList.add('active');
                 document.body.classList.add('lang-zh');
             } else {
+                document.getElementById('btn-en').classList.add('active');
                 document.body.classList.remove('lang-zh');
             }
         }
