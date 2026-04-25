@@ -1,164 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EUROPEAN GATE PC – Greece Real Estate & Golden Visa</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy: #273656;
-            --blue: #4a90e2;
-            --text: #273656;
-            --bg: #ffffff;
-            --light-bg: #f5f7fa;
-            --radius: 16px;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 16px 48px; background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px); border-bottom: 1px solid #eee;
-        }
-        .nav-logo { font-size: 22px; font-weight: 700; color: var(--navy); display: flex; align-items: center; gap: 8px; }
-        .nav-logo span { color: var(--blue); }
-        .nav-right { display: flex; align-items: center; gap: 32px; }
-        .nav-links { display: flex; gap: 24px; font-weight: 500; font-size: 14px; }
-        .nav-links a:hover { color: var(--blue); }
-        .btn-portal {
-            padding: 8px 20px; border: 1.5px solid var(--navy); border-radius: 50px;
-            font-size: 14px; font-weight: 600; transition: 0.3s;
-        }
-        .btn-portal:hover { background: var(--navy); color: #fff; }
-        .hero {
-            height: 90vh; background: url('https://images.unsplash.com/photo-1516483642144-7386221788cd?auto=format&fit=crop&w=1920&q=80') center/cover;
-            display: flex; align-items: center; position: relative; padding-top: 80px;
-        }
-        .hero-content {
-            background: #fff; padding: 60px; border-radius: 0 100px 100px 0;
-            max-width: 600px; box-shadow: 20px 0 50px rgba(0,0,0,0.1);
-        }
-        .hero h1 { font-size: 52px; line-height: 1.1; margin-bottom: 24px; font-weight: 700; color: var(--navy); }
-        .hero p { font-size: 18px; margin-bottom: 32px; color: #555; }
-        .search-container {
-            display: flex; background: #fff; border-radius: 50px; padding: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 100%; border: 1px solid #eee;
-        }
-        .search-input { border: none; padding: 12px 24px; flex: 1; border-radius: 50px; outline: none; font-size: 15px; }
-        .btn-search {
-            background: var(--navy); color: #fff; border: none; padding: 12px 32px;
-            border-radius: 50px; font-weight: 600; cursor: pointer;
-        }
-        section { padding: 100px 0; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 36px; margin-bottom: 16px; color: var(--navy); }
-        .section-header p { font-size: 18px; color: #666; max-width: 700px; margin: 0 auto; }
-        .property-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 32px; }
-        .property-card {
-            background: #fff; border-radius: var(--radius); overflow: hidden;
-            transition: 0.3s; border: 1px solid #eee; position: relative;
-        }
-        .property-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-        .property-img { height: 260px; background: #eee center/cover; }
-        .property-info { padding: 24px; }
-        .property-info h3 { font-size: 20px; margin-bottom: 8px; color: var(--navy); }
-        .property-info .location { color: #888; font-size: 14px; margin-bottom: 16px; display: block; }
-        .property-meta { display: flex; gap: 16px; font-size: 14px; color: #666; border-top: 1px solid #f0f0f0; padding-top: 16px; }
-        .badge {
-            position: absolute; top: 16px; left: 16px; background: #fff;
-            padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;
-            color: var(--navy); box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        footer { background: var(--navy); color: #fff; padding: 80px 0; }
-        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
-        .footer-col h4 { margin-bottom: 24px; font-size: 16px; }
-        .footer-col ul li { margin-bottom: 12px; opacity: 0.7; font-size: 14px; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px; padding-top: 30px; text-align: center; font-size: 13px; opacity: 0.5; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>European Gate PC — Your gateway to Greece</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav>
-    <a href="#" class="nav-logo">EUROPEAN<span>GATE</span></a>
-    <div class="nav-right">
-        <div class="nav-links">
-            <a href="#">Golden Visa</a>
-            <a href="#">Real Estate</a>
-            <a href="#">Our Services</a>
-            <a href="#">About Us</a>
-        </div>
-        <a href="#" class="btn-portal">Investor Portal</a>
-    </div>
-</nav>
-<section class="hero">
-    <div class="hero-content">
-        <h1>Your Gateway to Europe</h1>
-        <p>Premium Real Estate in Greece & Golden Visa expertise. Experience the luxury of a new beginning.</p>
-        <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search areas in Athens, Mykonos...">
-            <button class="btn-search">Search</button>
-        </div>
-    </div>
-</section>
-<section class="container">
-    <div class="section-header">
-        <h2>Featured Greek Properties</h2>
-        <p>Explore our handpicked selection of premium residences eligible for the Golden Visa program.</p>
-    </div>
-    <div class="property-grid">
-        <div class="property-card">
-            <div class="badge">Golden Visa</div>
-            <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80');"></div>
-            <div class="property-info">
-                <h3>Voula Riviera Residence</h3>
-                <span class="location">Athens Riviera, Voula</span>
-                <div class="property-meta"><span>3 Beds</span> • <span>2 Baths</span> • <span>120 m²</span></div>
-            </div>
-        </div>
-        <div class="property-card">
-            <div class="badge">New Build</div>
-            <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80');"></div>
-            <div class="property-info">
-                <h3>Glyfada Modern Loft</h3>
-                <span class="location">Glyfada, Athens</span>
-                <div class="property-meta"><span>2 Beds</span> • <span>2 Baths</span> • <span>95 m²</span></div>
-            </div>
-        </div>
-        <div class="property-card">
-            <div class="badge">Golden Visa</div>
-            <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1600607687940-4e2a09695d51?auto=format&fit=crop&w=800&q=80');"></div>
-            <div class="property-info">
-                <h3>Piraeus Port View</h3>
-                <span class="location">Piraeus, Greece</span>
-                <div class="property-meta"><span>2 Beds</span> • <span>1 Bath</span> • <span>80 m²</span></div>
-            </div>
-        </div>
-    </div>
-</section>
-<footer>
-    <div class="container footer-grid">
-        <div class="footer-col">
-            <h3 style="margin-bottom: 20px;">EUROPEAN GATE</h3>
-            <p style="opacity: 0.7; font-size: 14px;">Your trusted partner for Greek Real Estate and Golden Visa residency solutions.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Solutions</h4>
-            <ul><li>Golden Visa Program</li><li>Real Estate Investment</li><li>Property Management</li></ul>
-        </div>
-        <div class="footer-col">
-            <h4>Company</h4>
-            <ul><li>About Us</li><li>Our Team</li><li>Contact</li></ul>
-        </div>
-        <div class="footer-col">
-            <h4>Newsletter</h4>
-            <p style="font-size: 13px; opacity: 0.7;">Subscribe for property updates.</p>
-        </div>
-    </div>
-    <div class="footer-bottom">&copy; 2024 European Gate PC. All rights reserved.</div>
-</footer>
+<nav class="nav"><div class="container nav-inner">
+  <a class="logo" href="index.html">EGC<span> · European Gate</span></a>
+  <div class="nav-links">
+    <a href="index.html" data-en="Home" data-zh="首页">Home</a>
+    <a href="properties.html" data-en="Properties" data-zh="房源">Properties</a>
+    <a href="services.html" data-en="Services" data-zh="服务">Services</a>
+    <a href="contact.html" data-en="Contact" data-zh="联系">Contact</a>
+    <div class="lang-switch"><button class="active" onclick="setLang('en')">EN</button><button onclick="setLang('zh')">中文</button></div>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="container hero-content">
+  <h1 data-en="Your European gateway, starting in Greece." data-zh="开启欧洲的大门，从希腊开始。">Your European gateway, starting in Greece.</h1>
+  <p data-en="Premium real estate, Golden Visa and full-service relocation in Athens. Trusted by clients from China, Turkey and across Europe." data-zh="雅典高端房产、黄金签证与全流程落地服务。深得来自中国、土耳其与欧洲各国客户信赖。">Premium real estate, Golden Visa and full-service relocation in Athens. Trusted by clients from China, Turkey and across Europe.</p>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="properties.html" data-en="Browse Properties" data-zh="浏览房源">Browse Properties</a>
+    <a class="btn btn-ghost" href="contact.html" data-en="Contact Us" data-zh="联系我们">Contact Us</a>
+  </div>
+</div></header>
+
+<section><div class="container">
+  <div class="section-head">
+    <span class="eyebrow" data-en="WHAT WE DO" data-zh="核心服务">WHAT WE DO</span>
+    <h2 data-en="A complete gateway to Greece." data-zh="一站式希腊投资与落地服务">A complete gateway to Greece.</h2>
+    <p data-en="From property sourcing to residency, legal, and everyday living — we handle everything, in your language." data-zh="从看房、黄金签证、法律到日常生活安排，我们用您的语言全程处理。">From property sourcing to residency, legal, and everyday living — we handle everything, in your language.</p>
+  </div>
+  <div class="grid grid-3">
+    <div class="service"><div class="icon">⌂</div><h3 data-en="Real Estate" data-zh="精选房产">Real Estate</h3><p data-en="Hand-picked apartments, villas and commercial assets across Athens and the islands." data-zh="精选雅典及希腊各岛的公寓、别墅与商业物业。">Hand-picked apartments, villas and commercial assets across Athens and the islands.</p></div>
+    <div class="service"><div class="icon">★</div><h3 data-en="Golden Visa" data-zh="黄金签证">Golden Visa</h3><p data-en="End-to-end Greek residency-by-investment process with legal partners and compliance support." data-zh="全程希腊投资移民服务，搭配合规与法律团队。">End-to-end Greek residency-by-investment process with legal partners and compliance support.</p></div>
+    <div class="service"><div class="icon">➤</div><h3 data-en="Property Management" data-zh="物业托管">Property Management</h3><p data-en="Rental, renovation, tax filing and daily operations — your property, fully managed." data-zh="出租、翻新、报税与日常运营，您的资产我们全程托管。">Rental, renovation, tax filing and daily operations — your property, fully managed.</p></div>
+  </div>
+</div></section>
+
+<section style="background:var(--bg-soft)"><div class="container">
+  <div class="section-head">
+    <span class="eyebrow" data-en="FEATURED" data-zh="精选房源">FEATURED</span>
+    <h2 data-en="Handpicked properties in Athens." data-zh="雅典精选房源推荐">Handpicked properties in Athens.</h2>
+    <p data-en="A curated selection of investment-ready homes across the city’s best neighborhoods." data-zh="涩盖雅典核心地段的精选投资级物业。">A curated selection of investment-ready homes across the city's best neighborhoods.</p>
+  </div>
+  <div class="grid grid-3">
+    <div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80')"></div><div class="card-body"><span class="card-tag">Kolonaki</span><h3 data-en="Classic 2BR Apartment" data-zh="古典两室公寓">Classic 2BR Apartment</h3><p data-en="Prime location, Golden Visa eligible." data-zh="黄金地段，黄金签证适用。">Prime location, Golden Visa eligible.</p></div></div>
+    <div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80')"></div><div class="card-body"><span class="card-tag">Glyfada</span><h3 data-en="Seaside Penthouse" data-zh="海景顶层">Seaside Penthouse</h3><p data-en="Panoramic Aegean views, recently renovated." data-zh="爱琴海全景，新翻新完成。">Panoramic Aegean views, recently renovated.</p></div></div>
+    <div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80')"></div><div class="card-body"><span class="card-tag">Kifissia</span><h3 data-en="Modern Family Villa" data-zh="现代家庭别墅">Modern Family Villa</h3><p data-en="Garden, pool, quiet northern suburb." data-zh="花园、泳池，雅典北郊安静区域。">Garden, pool, quiet northern suburb.</p></div></div>
+  </div>
+</div></section>
+
+<section><div class="container">
+  <div class="stats">
+    <div><h3>10+</h3><p data-en="YEARS IN GREECE" data-zh="深耕希腊">YEARS IN GREECE</p></div>
+    <div><h3>300+</h3><p data-en="TRANSACTIONS" data-zh="成交案例">TRANSACTIONS</p></div>
+    <div><h3>15</h3><p data-en="CLIENT NATIONALITIES" data-zh="客户国籍">CLIENT NATIONALITIES</p></div>
+    <div><h3>€150M+</h3><p data-en="ASSETS MANAGED" data-zh="管理资产">ASSETS MANAGED</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="container">
+  <div class="cta-banner">
+    <h2 data-en="Ready to start your European journey?" data-zh="准备开启您的欧洲之旅？">Ready to start your European journey?</h2>
+    <p data-en="Speak with our team in English, Chinese, Greek or Turkish — we answer within 24 hours." data-zh="请与我们的团队联系，支持英语、中文、希腊语与土耳其语，24小时内回复。">Speak with our team in English, Chinese, Greek or Turkish — we answer within 24 hours.</p>
+    <a class="btn btn-primary" href="https://wa.me/306946096373" target="_blank" data-en="Open WhatsApp" data-zh="通过 WhatsApp 联系">Open WhatsApp</a>
+  </div>
+</div></section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><h4 data-en="EUROPEAN GATE PC" data-zh="EUROPEAN GATE PC">EUROPEAN GATE PC</h4><p data-en="Your trusted partner for real estate, Golden Visa and relocation services in Greece." data-zh="您在希腊的房产、黄金签证与落地服务的值得信赖的伙伴。">Your trusted partner for real estate, Golden Visa and relocation services in Greece.</p></div>
+    <div><h4 data-en="EXPLORE" data-zh="导航">EXPLORE</h4><a href="index.html" data-en="Home" data-zh="首页">Home</a><a href="properties.html" data-en="Properties" data-zh="房源">Properties</a><a href="services.html" data-en="Services" data-zh="服务">Services</a><a href="contact.html" data-en="Contact" data-zh="联系">Contact</a></div>
+    <div><h4 data-en="CONTACT" data-zh="联系我们">CONTACT</h4><a href="mailto:service@egcgr.com">service@egcgr.com</a><a href="mailto:europeangatepc@egcgr.com">europeangatepc@egcgr.com</a><a href="https://wa.me/306946096373" target="_blank">WhatsApp (中文)</a><p>WeChat: egc6373</p></div>
+    <div><h4 data-en="OFFICE" data-zh="办公地址">OFFICE</h4><a href="https://maps.google.com/?q=Pilou+35,+Athina+10441" target="_blank">Pilou 35, Athina 10441, Greece</a><p data-en="Mon–Fri 09:00–19:00 EET" data-zh="周一至周五 09:00–19:00 EET">Mon–Fri 09:00–19:00 EET</p></div>
+  </div>
+  <div class="foot-bottom">© 2026 European Gate PC · Athens · Serving clients in EN / 中文 / Ελληνικά / Türkçe</div>
+</div></footer>
+
+<script>
+function setLang(lang){
+  document.querySelectorAll('[data-en]').forEach(el=>{el.textContent = lang==='zh' ? (el.dataset.zh||el.dataset.en) : el.dataset.en;});
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.documentElement.lang = lang;
+}
+</script>
 </body>
 </html>
